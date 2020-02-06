@@ -1,0 +1,41 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API de microsserviços",
+  "main": "build/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/server.js",
+    "doc": "apidoc -i src/ -o ../doc/",
+    "lint": "tslint -r tslint -c tslint.json 'src/**/*.ts'",
+    "dev": "tsc && node -r dotenv/config build/server.js",
+    "test": "mocha -r ts-node/register -r dotenv/config test/**/*.ts --exit"
+  },
+  "keywords": [
+    "api",
+    "graphql",
+    "microsservice"
+  ],
+  "author": "Eugenio Cunha <eugenio.cunha@ymail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.14",
+    "@types/node-fetch": "^2.5.4",
+    "apidoc": "^0.20.0",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "mocha": "^6.2.2",
+    "node-fetch": "^2.6.0",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+test/
+build/
+.git/
+.env
+.gitignore
+.tslint.json
+tslint.json
+README.md
