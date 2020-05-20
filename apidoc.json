@@ -1,7 +1,7 @@
 {
   "name": "API",
   "version": "1.0.0",
-  "description": "API basica de examplo",
+  "description": "API REST",
   "title": "API microsservice",
   "url" : "http://0.0.0.0/api"
 }

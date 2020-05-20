@@ -1,7 +1,7 @@
 {
   "name": "API",
   "version": "1.0.0",
-  "description": "API basica de examplo",
+  "description": "API REST",
   "title": "API microsservice",
   "url": "http://0.0.0.0/api",
   "sampleUrl": false,
@@ -9,8 +9,8 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2020-05-20T19:14:29.534Z",
+    "time": "2020-05-20T19:33:24.825Z",
     "url": "http://apidocjs.com",
-    "version": "0.20.0"
+    "version": "0.20.1"
   }
 }
