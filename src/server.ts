@@ -1,4 +1,6 @@
-import app from './app';
+import App from './app';
+import { httpPort, httpHost, env } from './config'
 
-app.listen(process.env.HTTP_PORT || 3000, ():
-  void => console.info(`(${process.env.NODE_ENV}) http://0.0.0.0:${process.env.HTTP_PORT}`));
+const app = new App();
+
+app.listen(httpPort, () => console.info(`(${env}) http://${httpHost}:${httpPort}`));

@@ -2,14 +2,14 @@
   "name": "api",
   "version": "1.0.0",
   "description": "API de microsserviços",
-  "main": "build/server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node build/server.js",
-    "doc": "apidoc -i src/ -o ../doc/",
-    "lint": "tslint -r tslint -c tslint.json 'src/**/*.ts'",
-    "dev": "tsc && node -r dotenv/config build/server.js",
-    "test": "mocha -r ts-node/register -r dotenv/config test/**/*.ts --exit"
+    "build": "rm -rf dist/* && tsc",
+    "start": "node dist/server.js",
+    "doc": "apidoc -i src/ -o ./docs/",
+    "lint": "eslint --fix src/**/*.ts",
+    "dev": "tsc && node dist/server.js",
+    "test": "mocha -r ts-node/register test/**/*.ts --exit"
   },
   "keywords": [
     "api",
@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "eslint": "^7.0.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
@@ -31,11 +32,9 @@
     "@types/node-fetch": "^2.5.4",
     "apidoc": "^0.20.0",
     "chai": "^4.2.0",
-    "dotenv": "^8.2.0",
-    "mocha": "^6.2.2",
+    "mocha": "^7.1.2",
     "node-fetch": "^2.6.0",
     "ts-node": "^8.5.4",
-    "tslint": "^5.20.1",
     "typescript": "^3.7.3"
   }
 }

@@ -44,6 +44,7 @@ build/Release
 
 # Transpiled js from TypeScript
 build/
+dist/
 
 # Dependency directories
 node_modules/

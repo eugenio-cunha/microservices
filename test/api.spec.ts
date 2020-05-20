@@ -1,21 +1,20 @@
+import App from '../src/app';
 import { expect } from 'chai';
-
-import app from '../src/app';
 import fetch from 'node-fetch';
+import { httpPort, httpHost } from '../src/config'
 
-const host = '127.0.0.1';
-const port = process.env.HTTP_PORT || 3000;
+const app = new App();
 
-describe('API', (): void => {
+describe('API', () => {
   before(done => {
-    app.listen(port, (): void => {
+    app.listen(httpPort, () => {
 
       done();
     });
   });
 
-  it('/api/ping', async (): Promise<void> => {
-    const { status } = await fetch(`http://${host}:${port}/api/ping`);
+  it('/api/ping', async () => {
+    const { status } = await fetch(`http://${httpHost}:${httpPort}/api/ping`);
     expect(status).to.be.equal(200);
   });
 });

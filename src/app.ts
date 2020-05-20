@@ -1,9 +1,10 @@
 import cors from 'cors';
-import express from 'express';
-import routes from './routes';
+import routes from './api/routes';
+import express, { json, urlencoded, Application } from 'express';
 
-class App {
-  public express: express.Application;
+export default class App {
+
+  public express: Application;
 
   public constructor() {
     this.express = express();
@@ -12,17 +13,17 @@ class App {
     this.routes();
   }
 
-  public middlewares(): void {
-    this.express.use(express.urlencoded({ extended: true }));
-    this.express.use(express.json());
+  private middlewares(): void {
+    this.express.use(urlencoded({ extended: true }));
+    this.express.use(json());
     this.express.use(cors());
   }
 
-  public routes(): void {
+  private routes(): void {
     this.express.use('/api/', routes);
   }
+
+  public listen(port: number | string, callback: () => void) {
+    this.express.listen(port, callback);
+  }
 }
-
-const { express: app } = new App();
-
-export default app;
